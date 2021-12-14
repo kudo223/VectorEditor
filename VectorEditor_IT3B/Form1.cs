@@ -15,6 +15,8 @@ namespace VectorEditor_IT3B
     public partial class Form1 : Form
     {
         Shapes selectedShape = Shapes.None;
+        bool firstClick = true;
+        Line tempLine = null;
         List<Shape> shapes;
         System.Drawing.Point mousePoint;
         Color defaultButtonColor;
@@ -30,7 +32,8 @@ namespace VectorEditor_IT3B
         {
             this.Text = e.Location.ToString();
             mousePoint = e.Location;
-            //pboxCanvas.Refresh();
+            tempLine.Point2 = new Point(e.X, e.Y);
+            pboxCanvas.Refresh();
         }
 
         private void pboxCanvas_MouseClick(object sender, MouseEventArgs e)
@@ -41,7 +44,17 @@ namespace VectorEditor_IT3B
             }
             else if(selectedShape == Shapes.Line)
             {
-
+                if (firstClick)
+                {
+                    firstClick = false;
+                    tempLine = new Line(new Point(e.X, e.Y), new Point(e.X, e.Y));
+                }
+                else
+                {
+                    firstClick = true;
+                    tempLine.Point2 = new Point(e.X, e.Y);
+                    shapes.Add(tempLine);
+                }
             }
             pboxCanvas.Refresh();
         }
@@ -51,6 +64,10 @@ namespace VectorEditor_IT3B
             foreach (var shape in shapes)
             {
                 shape.Draw(e.Graphics);
+            }
+            if (tempLine != null)
+            {
+                tempLine.Draw(e.Graphics);
             }
         }
 
