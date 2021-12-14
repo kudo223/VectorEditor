@@ -35,7 +35,14 @@ namespace VectorEditor_IT3B
 
         private void pboxCanvas_MouseClick(object sender, MouseEventArgs e)
         {
-            shapes.Add(new Point(e.Location.X,e.Location.Y));
+            if (selectedShape == Shapes.Point)
+            {
+                shapes.Add(new Point(e.Location.X, e.Location.Y));
+            }
+            else if(selectedShape == Shapes.Line)
+            {
+
+            }
             pboxCanvas.Refresh();
         }
 
@@ -69,6 +76,13 @@ namespace VectorEditor_IT3B
         {
             try
             {
+                foreach(var shape in shapes)
+                {
+                    if (shape.GetType() == typeof(Point))
+                    {
+
+                    }
+                }
                 var json = File.ReadAllText(ofd.FileName);
                 shapes = JsonConvert.DeserializeObject<List<Shape>>(json);
                 pboxCanvas.Refresh();

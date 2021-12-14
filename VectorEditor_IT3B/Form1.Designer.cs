@@ -43,9 +43,10 @@
             this.pboxCanvas.BackColor = System.Drawing.Color.White;
             this.pboxCanvas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pboxCanvas.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pboxCanvas.Location = new System.Drawing.Point(134, 0);
+            this.pboxCanvas.Location = new System.Drawing.Point(94, 0);
+            this.pboxCanvas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pboxCanvas.Name = "pboxCanvas";
-            this.pboxCanvas.Size = new System.Drawing.Size(860, 590);
+            this.pboxCanvas.Size = new System.Drawing.Size(602, 354);
             this.pboxCanvas.TabIndex = 0;
             this.pboxCanvas.TabStop = false;
             this.pboxCanvas.Paint += new System.Windows.Forms.PaintEventHandler(this.pboxCanvas_Paint);
@@ -67,15 +68,17 @@
             this.panel1.Controls.Add(this.btnPoint);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(134, 590);
+            this.panel1.Size = new System.Drawing.Size(94, 354);
             this.panel1.TabIndex = 1;
             // 
             // btnLine
             // 
-            this.btnLine.Location = new System.Drawing.Point(12, 52);
+            this.btnLine.Location = new System.Drawing.Point(8, 31);
+            this.btnLine.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLine.Name = "btnLine";
-            this.btnLine.Size = new System.Drawing.Size(112, 34);
+            this.btnLine.Size = new System.Drawing.Size(78, 20);
             this.btnLine.TabIndex = 0;
             this.btnLine.Text = "Úsečka";
             this.btnLine.UseVisualStyleBackColor = true;
@@ -83,9 +86,10 @@
             // 
             // btnPoint
             // 
-            this.btnPoint.Location = new System.Drawing.Point(12, 12);
+            this.btnPoint.Location = new System.Drawing.Point(8, 7);
+            this.btnPoint.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPoint.Name = "btnPoint";
-            this.btnPoint.Size = new System.Drawing.Size(112, 34);
+            this.btnPoint.Size = new System.Drawing.Size(78, 20);
             this.btnPoint.TabIndex = 0;
             this.btnPoint.Text = "Bod";
             this.btnPoint.UseVisualStyleBackColor = true;
@@ -93,12 +97,13 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(994, 590);
+            this.ClientSize = new System.Drawing.Size(696, 354);
             this.Controls.Add(this.pboxCanvas);
             this.Controls.Add(this.panel1);
             this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
