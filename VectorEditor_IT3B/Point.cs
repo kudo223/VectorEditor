@@ -16,7 +16,7 @@ namespace VectorEditor_IT3B
         {
             X = 0;
             Y = 0;
-            Color = Color.Black;
+            Color = Color.Chocolate;
             Diameter = 8;
         }
 
@@ -24,7 +24,7 @@ namespace VectorEditor_IT3B
         {
             X = x;
             Y = y;
-            Color = Color.Black;
+            Color = Color.Chocolate;
             Diameter = 8;
         }
 

@@ -32,7 +32,10 @@ namespace VectorEditor_IT3B
         {
             this.Text = e.Location.ToString();
             mousePoint = e.Location;
-            tempLine.Point2 = new Point(e.X, e.Y);
+            if(tempLine != null)
+            {
+                tempLine.Point2 = new Point(e.X,e.Y) ;
+            }
             pboxCanvas.Refresh();
         }
 
@@ -54,6 +57,7 @@ namespace VectorEditor_IT3B
                     firstClick = true;
                     tempLine.Point2 = new Point(e.X, e.Y);
                     shapes.Add(tempLine);
+                    tempLine = null;
                 }
             }
             pboxCanvas.Refresh();
